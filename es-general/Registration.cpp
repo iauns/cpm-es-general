@@ -1,0 +1,41 @@
+#include "Registration.hpp"
+
+#include "comp/StaticObjRefID.hpp"
+#include "comp/Transform.hpp"
+#include "comp/ConstantRotation.hpp"
+#include "comp/CameraSelect.hpp"
+#include "comp/ClickBox2D.hpp"
+#include "comp/StaticCamera.hpp"
+#include "comp/StaticOrthoCamera.hpp"
+#include "comp/StaticMouseInput.hpp"
+#include "comp/StaticKeyboardInput.hpp"
+#include "comp/StaticScreenDims.hpp"
+#include "comp/StaticGlobalTime.hpp"
+
+#include "systems/ConstantRotationSys.hpp"
+#include "systems/ClickBox2DSys.hpp"
+
+namespace gen {
+
+void registerAll(CPM_ES_CEREAL_NS::CerealCore& core)
+{
+  // Register systems
+  registerSystem_ConstantRotation();
+  registerSystem_ClickBox2D();
+
+  // Register components
+  core.registerComponent<ConstantRotation>();
+  core.registerComponent<Transform>();
+  core.registerComponent<CameraSelect>();
+  core.registerComponent<ClickBox2D>();
+  core.registerComponent<StaticMouseInput>();
+  core.registerComponent<StaticKeyboardInput>();
+  core.registerComponent<StaticScreenDims>();
+  core.registerComponent<StaticGlobalTime>();
+  core.registerComponent<StaticCamera>();
+  core.registerComponent<StaticOrthoCamera>();
+  core.registerComponent<StaticObjRefID>();
+}
+
+} // namespace gen
+
