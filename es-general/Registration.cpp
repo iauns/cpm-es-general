@@ -11,6 +11,7 @@
 #include "comp/StaticKeyboardInput.hpp"
 #include "comp/StaticScreenDims.hpp"
 #include "comp/StaticGlobalTime.hpp"
+#include "comp/StaticRandom.hpp"
 
 #include "systems/ConstantRotationSys.hpp"
 #include "systems/ClickBox2DSys.hpp"
@@ -35,6 +36,7 @@ void registerAll(CPM_ES_CEREAL_NS::CerealCore& core)
   core.registerComponent<StaticCamera>();
   core.registerComponent<StaticOrthoCamera>();
   core.registerComponent<StaticObjRefID>();
+  core.registerComponent<StaticRandom>();
 }
 
 } // namespace gen
