@@ -58,7 +58,7 @@ struct StaticRandom
     randEngine.seed(seed);
   }
 
-  static const char* getName() {return "gp:LeafControl";}
+  static const char* getName() {return "gen:StaticRandom";}
 
   bool serialize(CPM_ES_CEREAL_NS::ComponentSerialize& /* s */, uint64_t /* entityID */)
   {
