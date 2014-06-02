@@ -2,6 +2,7 @@
 #include <glm/gtx/transform.hpp>
 #include <entity-system/GenericSystem.hpp>
 #include <es-systems/SystemCore.hpp>
+#include <es-acorn/Acorn.hpp>
 
 #include "../comp/Transform.hpp"
 #include "../comp/StaticGlobalTime.hpp"
@@ -67,9 +68,9 @@ public:
   }
 };
 
-void registerSystem_ConstantRotation()
+void registerSystem_ConstantRotation(CPM_ES_ACORN_NS::Acorn& core)
 {
-  CPM_ES_SYSTEMS_NS::SystemCore::registerSystem<ConstantRotationSys>();
+  core.registerSystem<ConstantRotationSys>();
 }
 
 const char* getSystemName_ConstantRotation()

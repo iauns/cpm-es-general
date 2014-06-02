@@ -2,6 +2,7 @@
 #include <glm/gtx/transform.hpp>
 #include <entity-system/GenericSystem.hpp>
 #include <es-systems/SystemCore.hpp>
+#include <es-acorn/Acorn.hpp>
 
 #include "../comp/Transform.hpp"
 #include "../comp/StaticMouseInput.hpp"
@@ -118,9 +119,9 @@ public:
   }
 };
 
-void registerSystem_ClickBox2D()
+void registerSystem_ClickBox2D(CPM_ES_ACORN_NS::Acorn& core)
 {
-  CPM_ES_SYSTEMS_NS::SystemCore::registerSystem<ClickBox2DSys>();
+  core.registerSystem<ClickBox2DSys>();
 }
 
 const char* getSystemName_ClickBox2D()

@@ -18,11 +18,11 @@
 
 namespace gen {
 
-void registerAll(CPM_ES_CEREAL_NS::CerealCore& core)
+void registerAll(CPM_ES_ACORN_NS::Acorn& core)
 {
   // Register systems
-  registerSystem_ConstantRotation();
-  registerSystem_ClickBox2D();
+  registerSystem_ConstantRotation(core);
+  registerSystem_ClickBox2D(core);
 
   // Register components
   core.registerComponent<ConstantRotation>();
